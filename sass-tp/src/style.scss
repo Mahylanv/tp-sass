@@ -1,0 +1,194 @@
+$noir : #000000; 
+$grey : #999999;
+$background : #FFFFFF03;
+$border-radius : 15px;
+$float: right;
+
+
+
+.body {
+    background-color: $background;
+}
+
+
+.date {
+    position: absolute;
+    top: 75px;
+    left: 21px;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $grey;
+}
+
+.menu {
+    position: absolute;
+    height: 926px;
+    left: 120px;
+    width: 308px;
+    top: 0;
+    border: 2px solid #000000;
+
+    .lien {
+        height: 943px;
+        width: 312px;
+        margin: auto;
+        position: absolute;
+        top: 294px;
+    }
+
+    .Service {
+        position: absolute;
+        color: #F24E1E;
+        height: 23px;
+        top: -74px;
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        svg {
+            width: 31px;
+            height: 26px;
+            top: 218px;
+            left: 178px;
+            margin-right: 30px;
+
+        }
+    }
+
+    .administrateur {
+        color: #000000;
+        border-top: 1px solid #E2E2E2;
+        padding-top: 25px;
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+        svg {
+            margin-right: 30px;
+        }
+    }
+
+    .close_service {
+        color: #FF4242;
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-decoration: none;
+        position: absolute;
+        bottom: 30px;
+        width: 312px;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #E2E2E2;
+        padding-top: 20px;
+
+        svg {
+            margin-left: 18px;
+        }
+    }
+}
+
+
+.hamburger-menu {
+    position: absolute;
+    width: 38px;
+    height: 18px;
+    top: 103px;
+    left: 374px;
+
+    animation-name: fadeInOut;
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
+
+    @keyframes fadeInOut {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $noir;
+        left: 0;
+        transition: all 0.3s ease;
+
+        &.line-1 {
+            width: 25px;
+            top: 109px;
+            left: 380px;
+            border: 2px;
+            border-radius: $border-radius;
+            float: $float;
+        }
+
+        &.line-2 {
+            width: 15px;
+            top: 116px;
+            left: 390px;
+            border: 2px;
+            border-radius: $border-radius;
+            float: $float;
+            margin-top: 5px;
+        }
+
+    }
+
+    &.open {
+        background-color: $background;
+
+        span {
+            &.line-1 {
+                width: 33.94px;
+                transform: rotate(-45deg) translate(0px, 0px);
+            }
+
+            &.line-2 {
+                width: 33.94px;
+                transform: rotate(45deg) translate(-5px, -5px);
+            }
+        }
+
+        .blur {
+            backdrop-filter: blur(5px); 
+        }
+    }
+}
+
+.open {
+
+    .blur {
+        backdrop-filter: blur(5px); 
+    }
+}
+
+.blur {
+    position: absolute;
+    height: 926px;
+    top: 0px;
+    left: 0px;
+    width: 119px;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+    background-color: #FFFFFF;
+    transition: backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+}
