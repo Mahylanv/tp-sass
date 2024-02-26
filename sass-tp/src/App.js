@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import  CheckboxComponents from'./components/checkbox/checkbox';
+import Bouton from './components/bouton';
+import TipsComponents from './components/pourboire';
+import ServiceComponents from './components/service';
+import RecapComponents from './components/checkbox/recap';
+import arrow from '../src/img/arrow.svg';
+import Header from './components/header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <Header />
+        <CheckboxComponents></CheckboxComponents>
+        {/* Je n'ai pas réussi a mettre les liens entre les pages mon router-dom a pas marché il faut décommenter les components */}
+        {/* <RecapComponents></RecapComponents> */}
+        {/* <TipsComponents></TipsComponents> */}
+        {/* <ServiceComponents></ServiceComponents> */}
+        <Bouton text="Suivant" icon={arrow} />
       </header>
-    </div>
   );
 }
 
