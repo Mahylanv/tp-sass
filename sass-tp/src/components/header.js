@@ -44,6 +44,7 @@ const Header = () => {
         <div className="header">
             <div className="blur">
                 <h1 className="date">{formattedDate}</h1>
+                <h1>Titre page</h1>
             </div>
             <div className={`hamburger-menu ${isOpen ? 'open' : ''}`} onClick={onClick}>
                 <span className="line line-1"></span>
