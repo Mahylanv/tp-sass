@@ -13,7 +13,7 @@ function RecapComponents() {
         <hr></hr>
         <li><img src={Photo}></img><p>Angela Danger</p><p class="tag">cuisine</p></li>
         <hr></hr>
-        <li><img src={Photo}></img><p>Abella white</p><p class="tag">cuisine</p></li>
+        <li><img src={Photo}></img><p>Abella white</p><p class="tag">salle</p></li>
         <hr></hr>
         <li><img src={Photo}></img><p>Fred Davis</p><p class="tag">cuisine</p></li>
         <hr></hr>
