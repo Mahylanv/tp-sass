@@ -7,10 +7,13 @@ import TipsComponents from './components/pourboire';
 import Bouton from './components/bouton';
 import Header from './components/header';
 import arrow from '../src/img/arrow.svg';
+import { useDarkMode } from './components/DarkModeProvider';
 
 function App() {
   const [step, setStep] = useState(0);
   const [activeTab, setActiveTab] = useState('salle');
+  // const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   const handleTabClick = (tab) => {
     if (step < 3) { // S'assurer que les onglets ne sont cliquables que avant l'étape de service
@@ -25,6 +28,7 @@ function App() {
       setStep(step + 1);
     }
   };
+
 
   const renderComponent = () => {
     if (step === 3) return <TipsComponents />;
@@ -51,8 +55,11 @@ function App() {
   const isActive = (tabName) => activeTab === tabName ? 'onglet onglet-active' : 'onglet';
 
   return (
-    <div>
+    <div className={`app-container ${isDarkMode ? 'darkmode' : ''}`}>
+    {/* <div className={`app-container ${isDarkMode ? 'darkmode' : ''}`}> */}
       <Header />
+      <main className='main'>
+        
       {step < 3 && (
         <div className="tabs">
           <button className={isActive('salle')} onClick={() => handleTabClick('salle')}>Salle</button>
@@ -67,6 +74,7 @@ function App() {
         <Bouton text={buttonText} onClick={handleNextClick} icon={buttonText === 'Suivant' ? arrow : undefined}
         />
       )}
+      </main>
     </div>
   );
 }
