@@ -5,14 +5,82 @@ $border-radius : 15px;
 $float: right;
 
 
-
 .body {
     background-color: $background;
 }
 
+// .app-container.darkmode {
+//     background-color: #131313;
+// }
+
+.darkmode {
+    // background-color: #131313;
+
+    .main {
+        background-color: #131313;
+    }
+
+    .blur {
+        h1 {
+            color: white;
+        }
+
+        .date {
+            color: #999999;
+        }
+    }
+
+    .hamburger-menu span {
+        background-color: white;
+    } 
+
+    .menu {
+        background-color: #131313;
+        .administrateur{
+            color: white;
+        }
+    }
+
+    .employé {
+        color: white;
+
+        .tag {
+
+            background-color: #474747;
+            color: #E1E1E1;
+        }
+    }
+
+    .toggle + label::before{
+        background-color: #FF6B4066;
+    }
+
+    .toggle:checked+label::after {
+        transform: translateX(158%);
+    
+    }
+
+    .tabs .onglet{
+        color: #999999;
+    }
+    .tabs .onglet-active{
+        background-color: #999999;
+        color: #FFFFFF;
+    }
+
+    .administrateur svg {
+        fill: white;
+    }
+
+    .sun{
+        fill: white;
+    }
+}
+
+
 .date {
     position: absolute;
-    top: 75px;
+    top: 30px;
     left: 21px;
     font-family: Arial;
     font-size: 17px;
@@ -26,10 +94,9 @@ $float: right;
 
 h1 {
     position: absolute;
-    top: 75px;
     left: 21px;
     width: 212px;
-    top: 109px;
+    top: 64px;
     height: 78px;
     font-family: Arial;
     font-size: 34px;
@@ -45,29 +112,35 @@ h1 {
     position: absolute;
     height: 926px;
     left: 120px;
-    width: 308px;
+    width: 312px;
     top: 0;
-    border: 2px solid #000000;
+    background-color: white;
+    z-index: 2;
 
     .lien {
-        height: 943px;
+        height: 827px;
         width: 312px;
         margin: auto;
         position: absolute;
-        top: 294px;
+        top: 235px;
     }
 
     .Service {
         position: absolute;
-        color: #F24E1E;
-        height: 23px;
-        top: -74px;
+        color: #F24E31;
+        height: 30px;
+        top: -58px;
         font-family: Arial;
         font-size: 20px;
         font-weight: 700;
         line-height: 23px;
         letter-spacing: 0em;
         text-align: left;
+        width: 248px;
+        display: flex;
+        align-items: center;
+        left: 58px;
+        border-right: 6px solid #F24E1E;
 
         svg {
             width: 31px;
@@ -79,9 +152,31 @@ h1 {
         }
     }
 
+    .hr {
+        width: 233px;
+        height: 1px;
+        background-color: #E2E2E2;
+        display: block;
+        margin: auto;
+    }
+
+    // Pour le header avec le modifier
+
+    .hr2 {
+
+        width: 277px;
+        height: 1px;
+        color: #E2E2E2;
+        background: #E2E2E2;
+        position: absolute;
+        bottom: 72px;
+        display: flex;
+        left: 15px;
+    }
+
     .administrateur {
         color: #000000;
-        border-top: 1px solid #E2E2E2;
+        // border-top: 1px solid #E2E2E2;
         padding-top: 25px;
         font-family: Arial;
         font-size: 20px;
@@ -89,6 +184,9 @@ h1 {
         line-height: 23px;
         letter-spacing: 0em;
         text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
 
         svg {
@@ -110,8 +208,8 @@ h1 {
         width: 312px;
         display: flex;
         justify-content: center;
-        border-top: 1px solid #E2E2E2;
-        padding-top: 20px;
+        // border-top: 1px solid #E2E2E2;
+        // padding-top: 20px;
 
         svg {
             margin-left: 18px;
@@ -124,8 +222,9 @@ h1 {
     position: absolute;
     width: 38px;
     height: 18px;
-    top: 103px;
+    top: 58px;
     left: 374px;
+    z-index: 3;
 
     animation-name: fadeInOut;
     animation-timing-function: ease-out;
@@ -185,27 +284,119 @@ h1 {
             }
         }
 
-        .blur {
-            backdrop-filter: blur(5px);
-        }
-    }
-}
-
-.open {
-
-    .blur {
-        backdrop-filter: blur(5px);
     }
 }
 
 .blur {
-    position: absolute;
-    height: 926px;
+    // position: absolute;
+    height: 180px;
     top: 0px;
     left: 0px;
     width: 119px;
-    -webkit-backdrop-filter: blur(0);
-    backdrop-filter: blur(0);
-    background-color: #FFFFFF;
-    transition: backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+    transition: filter 0.3s ease;
+}
+
+.blur.open {
+    filter: blur(5px);
+    /* Ou tout autre style pour appliquer le flou */
+}
+
+.modifier_service {
+    width: 312px;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    bottom: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    svg {
+        margin-left: 18px;
+    }
+}
+
+.main.open {
+    filter: blur(10px);
+}
+
+
+// DARKMODE
+
+.toggle-container {
+    height: 120px;
+    // background-color: white;
+
+    .sun {
+        position: absolute;
+        z-index: 1;
+        left: 160px;
+    }
+
+    .moon {
+        position: absolute;
+        z-index: 1;
+        right: 157px;
+    }
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.toggle+label {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: black;
+    justify-content: center;
+}
+
+.toggle+label::before {
+    content: "";
+    background: #FFE1D9;
+    border: 1px solid #FF6B4045;
+    width: 137px;
+    height: 56px;
+    border-radius: 35.5px;
+}
+
+.toggle+label::after {
+    position: absolute;
+    content: "";
+    height: 52px;
+    width: 51px;
+    border-radius: 1em;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px #00000024 inset;
+    // position: absolute;
+    // left: 0.2em;
+    left: 148px;
+    transition: background-color 250ms ease-in-out, transform 250ms ease-in-out;
+}
+
+
+.toggle:checked+label::after {
+    transform: translateX(158%);
+
+}
+
+.toggle-text {
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 38px;
+    margin-bottom: 38px;
+
 }
